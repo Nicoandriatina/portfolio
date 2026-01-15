@@ -1,0 +1,247 @@
+/* .aboutContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 80px;
+  align-items: center;
+  margin-top: 60px;
+}
+
+.aboutText p {
+  margin-bottom: 20px;
+  line-height: 1.8;
+  color: var(--muted);
+}
+
+.skills h3 {
+  color: var(--text);
+  margin-bottom: 20px;
+  font-size: 1.2rem;
+}
+
+.skillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 10px;
+}
+
+.skillTag {
+  background: rgba(56, 132, 255, 0.1);
+  color: var(--accent);
+  padding: 8px 16px;
+  border-radius: 20px;
+  font-size: 0.9rem;
+  border: 1px solid rgba(56, 132, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.skillTag:hover {
+  background: var(--accent);
+  color: white;
+  transform: scale(1.05);
+}
+
+.aboutVisual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.codeAnimation {
+  background: rgba(0, 0, 0, 0.5);
+  border: 1px solid rgba(56, 132, 255, 0.3);
+  border-radius: 12px;
+  padding: 30px;
+  font-family: 'Courier New', monospace;
+  font-size: 1.1rem;
+  color: var(--accent);
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.3);
+}
+
+.codeLine {
+  margin-bottom: 8px;
+}
+
+.codeLine.indent {
+  margin-left: 20px;
+}
+
+@media (max-width: 1024px) {
+  .aboutContent {
+    grid-template-columns: 1fr;
+    gap: 50px;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutContent {
+    gap: 40px;
+  }
+}
+
+@media (max-width: 640px) {
+  .aboutContent {
+    gap: 30px;
+  }
+
+  .skillsGrid {
+    justify-content: center;
+  }
+} */
+
+.aboutContent {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 60px;
+  align-items: start;
+  margin-top: 40px;
+}
+
+.aboutText p {
+  margin-bottom: 16px;
+  line-height: 1.6;
+  color: var(--muted);
+  font-size: 0.95rem;
+}
+
+.skills {
+  margin-top: 30px;
+}
+
+.skills h3 {
+  color: var(--text);
+  margin-bottom: 16px;
+  font-size: 1.1rem;
+}
+
+.skillsGrid {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 8px;
+}
+
+.skillTag {
+  background: rgba(56, 132, 255, 0.1);
+  color: var(--accent);
+  padding: 6px 14px;
+  border-radius: 20px;
+  font-size: 0.85rem;
+  border: 1px solid rgba(56, 132, 255, 0.3);
+  transition: all 0.3s ease;
+}
+
+.skillTag:hover {
+  background: var(--accent);
+  color: white;
+  transform: scale(1.05);
+}
+
+.aboutVisual {
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
+/* Core Values Grid - Optimisé pour éviter le scroll */
+.coreValuesGrid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: 16px;
+  width: 100%;
+  max-width: 500px;
+}
+
+.valueCard {
+  background: rgba(56, 132, 255, 0.05);
+  border: 1px solid rgba(56, 132, 255, 0.2);
+  border-radius: 16px;
+  padding: 24px 16px;
+  text-align: center;
+  transition: all 0.3s ease;
+  backdrop-filter: blur(10px);
+}
+
+.valueCard:hover {
+  background: rgba(56, 132, 255, 0.1);
+  border-color: var(--accent);
+  transform: translateY(-5px);
+  box-shadow: 0 10px 30px rgba(56, 132, 255, 0.2);
+}
+
+.valueIcon {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  margin-bottom: 12px;
+  color: var(--accent);
+  filter: drop-shadow(0 4px 8px rgba(56, 132, 255, 0.3));
+}
+
+.valueIcon svg {
+  width: 40px;
+  height: 40px;
+}
+
+.valueTitle {
+  color: var(--text);
+  font-size: 1rem;
+  font-weight: 600;
+  margin-bottom: 6px;
+}
+
+.valueDescription {
+  color: var(--muted);
+  font-size: 0.85rem;
+  line-height: 1.4;
+}
+
+@media (max-width: 1024px) {
+  .aboutContent {
+    grid-template-columns: 1fr;
+    gap: 40px;
+  }
+  
+  .coreValuesGrid {
+    grid-template-columns: repeat(2, 1fr);
+    max-width: 600px;
+    margin: 0 auto;
+  }
+}
+
+@media (max-width: 768px) {
+  .aboutContent {
+    gap: 30px;
+    margin-top: 30px;
+  }
+  
+  .coreValuesGrid {
+    gap: 12px;
+  }
+  
+  .valueCard {
+    padding: 20px 12px;
+  }
+  
+  .valueIcon svg {
+    width: 36px;
+    height: 36px;
+  }
+}
+
+@media (max-width: 640px) {
+  .aboutContent {
+    gap: 30px;
+  }
+
+  .skillsGrid {
+    justify-content: center;
+  }
+  
+  .coreValuesGrid {
+    grid-template-columns: 1fr;
+    gap: 12px;
+  }
+  
+  .valueCard {
+    padding: 18px 12px;
+  }
+}
