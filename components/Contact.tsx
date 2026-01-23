@@ -1,10 +1,13 @@
 'use client'
 
 import { useEffect, useRef, useState, FormEvent } from 'react'
+import { useTranslations, useLocale } from 'next-intl'
 import emailjs from '@emailjs/browser'
 import styles from './Contact.module.css'
 
 export default function Contact() {
+  const t = useTranslations('contact')
+  const locale = useLocale()
   const contactRef = useRef<HTMLDivElement>(null)
   const formRef = useRef<HTMLFormElement>(null)
   const [isSubmitting, setIsSubmitting] = useState(false)
@@ -48,28 +51,61 @@ export default function Contact() {
     setIsSubmitting(true)
 
     try {
-      await emailjs.sendForm(
-        "service_jtnlzjh",   // Service ID
-        "template_1g0ebr8",  // Template ID
+      // Envoyer un seul email qui ira aux deux destinataires
+      console.log('Sending email...')
+      const result = await emailjs.sendForm(
+        "service_qsww15m",   // Service ID
+        "template_09c959s",  // Template ID unique
         formRef.current
       )
-      alert("✅ Message sent successfully!")
+      console.log('Email sent successfully:', result)
+
+      alert(t('form.success'))
       formRef.current.reset()
-    } catch (error) {
-      console.error('Error:', error)
-      alert("❌ Failed to send message. Please try again.")
+    } catch (error: any) {
+      console.error('EmailJS Error Details:', {
+        message: error?.message || 'Unknown error',
+        text: error?.text || 'No text',
+        status: error?.status || 'No status',
+        full: error
+      })
+      alert(t('form.error') + '\n\nDetails: ' + (error?.text || error?.message || 'Unknown error'))
     } finally {
       setIsSubmitting(false)
     }
   }
 
+  const handleDownloadCV = () => {
+    // Sélectionner le CV selon la langue actuelle
+    const cvPaths = {
+      en: '/cv/CV_andriatinasoa_jean_nico_en.pdf',
+      fr: '/cv/CV_andriatinasoa_jean_nico_fr.pdf'
+    }
+    
+    const cvFileNames = {
+      en: 'CV_Andriatinasoa_Jean_Nico_EN.pdf',
+      fr: 'CV_Andriatinasoa_Jean_Nico_FR.pdf'
+    }
+
+    const cvPath = cvPaths[locale as keyof typeof cvPaths] || cvPaths.en
+    const cvFileName = cvFileNames[locale as keyof typeof cvFileNames] || cvFileNames.en
+
+    // Créer un lien temporaire pour le téléchargement
+    const link = document.createElement('a')
+    link.href = cvPath
+    link.download = cvFileName
+    document.body.appendChild(link)
+    link.click()
+    document.body.removeChild(link)
+  }
+
   return (
     <section id="contact" className="section" ref={contactRef}>
       <div className="container">
-        <h2 className="section-title">Get In Touch</h2>
+        <h2 className="section-title">{t('title')}</h2>
         <div className={styles.contactContent}>
           <div className={`${styles.contactInfo} slide-in-left`}>
-            <p>Let&apos;s collaborate! I am always open to discussing exciting projects and new opportunities.</p>
+            <p>{t('description')}</p>
             <div className={styles.contactDetails}>
               <div className={styles.contactItem}>
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -87,9 +123,21 @@ export default function Contact() {
                 <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                   <path d="M12 2C8.13 2 5 5.13 5 9c0 5.25 7 13 7 13s7-7.75 7-13c0-3.87-3.13-7-7-7zm0 9.5c-1.38 0-2.5-1.12-2.5-2.5s1.12-2.5 2.5-2.5 2.5 1.12 2.5 2.5-1.12 2.5-2.5 2.5z"/>
                 </svg>
-                <span>Fianarantsoa, Madagascar</span>
+                <span>{t('location')}</span>
               </div>
             </div>
+            
+            {/* Bouton Download CV */}
+            <div style={{ marginTop: '2rem' }}>
+              <button 
+                className="glow-genz-button" 
+                onClick={handleDownloadCV}
+                type="button"
+              >
+                {t('downloadCV')}
+              </button>
+            </div>
+
             <div className={styles.socialLinks}>
               <a href="https://github.com/Nicoandriatina" aria-label="GitHub" target="_blank" rel="noopener noreferrer">
                 <svg width="24" height="24" viewBox="0 0 24 24" fill="currentColor">
@@ -113,7 +161,7 @@ export default function Contact() {
               <div className={styles.formGroup}>
                 <input 
                   type="text" 
-                  placeholder="Your Name" 
+                  placeholder={t('form.name')}
                   required 
                   name="user_name"
                 />
@@ -121,7 +169,7 @@ export default function Contact() {
               <div className={styles.formGroup}>
                 <input 
                   type="email" 
-                  placeholder="Your Email" 
+                  placeholder={t('form.email')}
                   required 
                   name="user_email"
                 />
@@ -129,7 +177,7 @@ export default function Contact() {
               <div className={styles.formGroup}>
                 <textarea 
                   name="message" 
-                  placeholder="Your Message" 
+                  placeholder={t('form.message')}
                   rows={5} 
                   required
                 />
@@ -139,7 +187,7 @@ export default function Contact() {
                 className="glow-genz-button"
                 disabled={isSubmitting}
               >
-                {isSubmitting ? 'Sending...' : 'Send Message'}
+                {isSubmitting ? t('form.sending') : t('form.send')}
               </button>
             </form>
           </div>

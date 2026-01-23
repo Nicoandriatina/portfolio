@@ -1,3 +1,4 @@
+
 // 'use client'
 
 // import { useState, useEffect } from 'react'
@@ -73,6 +74,16 @@
 //     })
 //   }, [])
 
+//   const handleDownloadCV = () => {
+//     // Créer un lien temporaire pour le téléchargement
+//     const link = document.createElement('a')
+//     link.href = '/cv/CV_andriatinasoa_jean_nico.pdf'
+//     link.download = 'CV_andriatinasoa_jean_nico.pdf'
+//     document.body.appendChild(link)
+//     link.click()
+//     document.body.removeChild(link)
+//   }
+
 //   return (
 //     <section id="home" className={styles.hero}>
 //       <div className="container">
@@ -113,7 +124,13 @@
 //             </h1>
 //             <p className={styles.heroQuote}>Passionate about crafting quality web experiences and continuous learning</p>
 //             <div className={styles.heroButtons}>
-//               <button className="glow-genz-button">Download CV</button>
+//               <button 
+//                 className="glow-genz-button" 
+//                 onClick={handleDownloadCV}
+//                 type="button"
+//               >
+//                 Download CV
+//               </button>
 //             </div>
 //             <div className={styles.heroSocial}>
 //               <a href="https://www.linkedin.com/in/nico-andriatina-34a37b250/" target="_blank" rel="noopener noreferrer" aria-label="LinkedIn">
@@ -148,14 +165,18 @@
 
 import { useState, useEffect } from 'react'
 import Image from 'next/image'
+import { useTranslations, useLocale } from 'next-intl'
 import styles from './Hero.module.css'
 
 export default function Hero() {
+  const t = useTranslations('hero')
+  const locale = useLocale()
   const [text, setText] = useState('')
   const [isDeleting, setIsDeleting] = useState(false)
   const [loopNum, setLoopNum] = useState(0)
   const [typingSpeed, setTypingSpeed] = useState(100)
 
+  // Phrases traduites dynamiquement
   const phrases = [
     'Fullstack Developer',
     'React & NextJS',
@@ -220,10 +241,24 @@ export default function Hero() {
   }, [])
 
   const handleDownloadCV = () => {
+    // Sélectionner le CV selon la langue actuelle
+    const cvPaths = {
+      en: '/cv/CV_andriatinasoa_jean_nico_en.pdf',
+      fr: '/cv/CV_andriatinasoa_jean_nico_fr.pdf'
+    }
+    
+    const cvFileNames = {
+      en: 'CV_Andriatinasoa_Jean_Nico_EN.pdf',
+      fr: 'CV_Andriatinasoa_Jean_Nico_FR.pdf'
+    }
+
+    const cvPath = cvPaths[locale as keyof typeof cvPaths] || cvPaths.en
+    const cvFileName = cvFileNames[locale as keyof typeof cvFileNames] || cvFileNames.en
+
     // Créer un lien temporaire pour le téléchargement
     const link = document.createElement('a')
-    link.href = '/cv/CV_andriatinasoa_jean_nico.pdf'
-    link.download = 'CV_andriatinasoa_jean_nico.pdf'
+    link.href = cvPath
+    link.download = cvFileName
     document.body.appendChild(link)
     link.click()
     document.body.removeChild(link)
@@ -262,19 +297,19 @@ export default function Hero() {
             </div>
           </div>
           <div className={styles.heroText}>
-            <p className={styles.greeting}>Hello, I&apos;m Andriatinasoa Jean Nico 👋</p>
+            <p className={styles.greeting}>{t('greeting')}</p>
             <h1 className={styles.heroTitle}>
               <span>{text}</span>
               <span className={styles.cursor}>|</span>
             </h1>
-            <p className={styles.heroQuote}>Passionate about crafting quality web experiences and continuous learning</p>
+            <p className={styles.heroQuote}>{t('quote')}</p>
             <div className={styles.heroButtons}>
               <button 
                 className="glow-genz-button" 
                 onClick={handleDownloadCV}
                 type="button"
               >
-                Download CV
+                {t('downloadCV')}
               </button>
             </div>
             <div className={styles.heroSocial}>
