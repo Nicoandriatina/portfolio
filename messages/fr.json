@@ -71,7 +71,7 @@
     }
   },
   "projects": {
-    "title": "Mes Projets",
+    "title": "Mes Réalisations",
     "viewDemo": "Démo en direct",
     "viewCode": "GitHub",
     "items": {
@@ -112,7 +112,23 @@
       "send": "Envoyer le message",
       "sending": "Envoi en cours...",
       "success": "✅ Message envoyé avec succès !",
-      "error": "❌ Échec de l'envoi du message. Veuillez réessayer."
+      "error": "❌ Échec de l'envoi du message. Veuillez réessayer.",
+      "errors": {
+        "nameRequired": "Le nom est requis",
+        "nameInvalid": "Le nom doit contenir au moins 2 caractères",
+        "emailRequired": "L'email est requis",
+        "emailInvalid": "Adresse email invalide",
+        "messageRequired": "Le message est requis",
+        "messageInvalid": "Le message doit contenir au moins 10 caractères"
+      },
+      "modal": {
+        "successTitle": "Message envoyé !",
+        "success": "Merci pour votre message ! 🎉\n\nJe l'ai bien reçu et vous répondrai dans les plus brefs délais.\n\nVous recevrez également un email de confirmation.",
+        "errorTitle": "Oups, une erreur est survenue",
+        "error400": "Une erreur s'est produite. Veuillez réessayer dans quelques instants.",
+        "error401": "Problème de connexion. Veuillez vérifier votre connexion internet.",
+        "close": "Fermer"
+      }
     },
     "location": "Madagascar, Fianarantsoa"
   }
