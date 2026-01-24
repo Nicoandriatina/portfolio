@@ -17,7 +17,7 @@
       "innovator": "Innovateur"
     },
     "quote": "Passionné par la création d'expériences web de qualité et l'apprentissage continu",
-    "downloadCV": "Télécharger CV"
+    "downloadCV": "Télécharger mon CV"
   },
   "about": {
     "title": "À propos de moi",
@@ -104,7 +104,7 @@
   "contact": {
     "title": "Contactez-moi",
     "description": "Collaborons ensemble ! Je suis toujours ouvert à discuter de projets passionnants et de nouvelles opportunités.",
-    "downloadCV": "Télécharger CV",
+    "downloadCV": "Télécharger my CV",
     "form": {
       "name": "Votre Nom",
       "email": "Votre Email",
