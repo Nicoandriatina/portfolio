@@ -4,7 +4,7 @@ import {getMessages} from 'next-intl/server';
 import '../globals.css'
 
 export const metadata: Metadata = {
-  title: 'Nico - JavaScript Developer Portfolio',
+  title: 'Portfolio of Nico - JavaScript Developer',
   description: 'Portfolio of Nico, JavaScript Developer specialized in React, Next.js and React Native',
   icons: {
     icon: '/icon.jpg',

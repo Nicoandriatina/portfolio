@@ -92,12 +92,13 @@ export default function Navbar() {
             </Link>
           </li>
 
-          {/* Language Switcher pour MOBILE - Dans le menu */}
+          {/* Language Switcher MOBILE - Directement dans le menu */}
           <li className={styles.mobileLangSwitcher}>
             <LanguageSwitcher />
           </li>
         </ul>
         
+        {/* RÉSEAUX SOCIAUX - Séparés du Language Switcher */}
         <div className={styles.navSocial}>
           <a href="https://github.com/Nicoandriatina" aria-label="GitHub" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -114,8 +115,10 @@ export default function Navbar() {
               <path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-2.9h2V9.5c0-2 1.2-3.2 3-3.2.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2v1.5h2.3L15 14.9h-2v7A10 10 0 0 0 22 12"/>
             </svg>
           </a>
+        </div>
 
-          {/* Language Switcher - Visible sur desktop uniquement */}
+        {/* Language Switcher DESKTOP - En dehors de navSocial */}
+        <div className={styles.desktopLangSwitcher}>
           <LanguageSwitcher />
         </div>
         
