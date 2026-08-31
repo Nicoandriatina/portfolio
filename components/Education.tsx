@@ -1,9 +1,11 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { useTranslations } from 'next-intl'
 import styles from './Education.module.css'
 
 export default function Education() {
+  const t = useTranslations('education')
   const educationRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -32,12 +34,12 @@ export default function Education() {
 
   const educationData = [
     {
-      degree: "Master's in Computer Science",
-      school: 'National School of Computer Science (ENI)',
-      location: 'Fianarantsoa, Madagascar',
-      period: '2024 - 2025',
-      details: 'General Computer Science Track - Second Year',
-      badge: 'Graduated with Honors',
+      degree: t('degrees.master.title'),
+      school: t('degrees.master.school'),
+      location: t('degrees.master.location'),
+      period: t('degrees.master.period'),
+      details: t('degrees.master.details'),
+      badge: t('degrees.master.badge'),
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/>
@@ -45,12 +47,12 @@ export default function Education() {
       )
     },
     {
-      degree: "Bachelor's in Computer Science",
-      school: 'National School of Computer Science (ENI)',
-      location: 'Fianarantsoa, Madagascar',
-      period: '2020 - 2023',
+      degree: t('degrees.bachelor.title'),
+      school: t('degrees.bachelor.school'),
+      location: t('degrees.bachelor.location'),
+      period: t('degrees.bachelor.period'),
       details: null,
-      badge: 'Graduated with Honors',
+      badge: t('degrees.bachelor.badge'),
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 3L1 9l11 6 9-4.91V17h2V9M5 13.18v4L12 21l7-3.82v-4L12 17l-7-3.82z"/>
@@ -58,12 +60,12 @@ export default function Education() {
       )
     },
     {
-      degree: 'Baccalaureate, Series C — with Fairly Good distinction',
-      school: 'Saint François Xavier High School (CSFX)',
-      location: 'Fianarantsoa, Madagascar',
-      period: '2019',
+      degree: t('degrees.baccalaureate.title'),
+      school: t('degrees.baccalaureate.school'),
+      location: t('degrees.baccalaureate.location'),
+      period: t('degrees.baccalaureate.period'),
       details: null,
-      badge: 'Good Honors',
+      badge: t('degrees.baccalaureate.badge'),
       icon: (
         <svg width="32" height="32" viewBox="0 0 24 24" fill="currentColor">
           <path d="M12 3v9.28c-.47-.17-.97-.28-1.5-.28C8.01 12 6 14.01 6 16.5S8.01 21 10.5 21c2.31 0 4.2-1.75 4.45-4H15V6h4V3h-7z"/>
@@ -75,7 +77,7 @@ export default function Education() {
   return (
     <section id="education" className="section" ref={educationRef}>
       <div className="container">
-        <h2 className="section-title">Education</h2>
+        <h2 className="section-title">{t('title')}</h2>
         <div className={`${styles.educationGrid} slide-in-up`}>
           {educationData.map((edu, index) => (
             <div key={index} className={styles.educationCard}>

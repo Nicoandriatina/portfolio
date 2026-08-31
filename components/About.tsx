@@ -1,9 +1,11 @@
 'use client'
 
 import { useEffect, useRef } from 'react'
+import { useTranslations } from 'next-intl'
 import styles from './About.module.css'
 
 export default function About() {
+  const t = useTranslations('about')
   const aboutRef = useRef<HTMLDivElement>(null)
 
   useEffect(() => {
@@ -43,8 +45,8 @@ export default function About() {
           <path d="M2 12l10 5 10-5"/>
         </svg>
       ),
-      title: 'Adaptability',
-      description: 'Flexible approach to challenges'
+      title: t('coreValues.adaptability.title'),
+      description: t('coreValues.adaptability.description')
     },
     {
       icon: (
@@ -55,8 +57,8 @@ export default function About() {
           <path d="M16 3.13a4 4 0 0 1 0 7.75"/>
         </svg>
       ),
-      title: 'Team Spirit',
-      description: 'Strong collaboration skills'
+      title: t('coreValues.teamSpirit.title'),
+      description: t('coreValues.teamSpirit.description')
     },
     {
       icon: (
@@ -67,8 +69,8 @@ export default function About() {
           <path d="M12 18v4"/>
         </svg>
       ),
-      title: 'Autonomy',
-      description: 'Self-driven and responsible'
+      title: t('coreValues.autonomy.title'),
+      description: t('coreValues.autonomy.description')
     },
     {
       icon: (
@@ -77,29 +79,25 @@ export default function About() {
           <path d="M21 12v7a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h11"/>
         </svg>
       ),
-      title: 'Rigor',
-      description: 'Best practices focused'
+      title: t('coreValues.rigor.title'),
+      description: t('coreValues.rigor.description')
     }
   ]
 
   return (
     <section id="about" className="section" ref={aboutRef}>
       <div className="container">
-        <h2 className="section-title">About Me</h2>
+        <h2 className="section-title">{t('title')}</h2>
         <div className={styles.aboutContent}>
           <div className={`${styles.aboutText} slide-in-left`}>
             <p>
-              Versatile JavaScript Developer specialized in ReactJS, Next.js, and React Native, 
-              with a strong interest in modern architectures (JAMstack, microservices, serverless). 
-              Experienced in full-stack development and creating secure RESTful APIs.
+              {t('description1')}
             </p>
             <p>
-              Curious and motivated, I transform ideas into performant and scalable web solutions. 
-              Experienced in project management and team coordination, I am committed to delivering 
-              quality products on time.
+              {t('description2')}
             </p>
             <div className={styles.skills}>
-              <h3>Skills & Technologies</h3>
+              <h3>{t('skillsTitle')}</h3>
               <div className={styles.skillsGrid}>
                 <span className={styles.skillTag}>JavaScript</span>
                 <span className={styles.skillTag}>TypeScript</span>

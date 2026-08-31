@@ -1,0 +1,119 @@
+{
+  "nav": {
+    "home": "Accueil",
+    "about": "À propos",
+    "education": "Formation",
+    "projects": "Projets",
+    "contact": "Contact"
+  },
+  "hero": {
+    "greeting": "Bonjour, je suis Andriatinasoa Jean Nico 👋",
+    "roles": {
+      "webDev": "Développeur Web",
+      "frontend": "Front-End",
+      "problemSolver": "Résolveur de problèmes",
+      "codeExplorer": "Explorateur de code",
+      "aiExplorer": "Explorateur IA",
+      "innovator": "Innovateur"
+    },
+    "quote": "Passionné par la création d'expériences web de qualité et l'apprentissage continu",
+    "downloadCV": "Télécharger mon CV"
+  },
+  "about": {
+    "title": "À propos de moi",
+    "description1": "Développeur JavaScript polyvalent spécialisé dans ReactJS, Next.js et React Native, avec un fort intérêt pour les architectures modernes (JAMstack, microservices, serverless). Expérimenté dans le développement full-stack et la création d'API RESTful sécurisées.",
+    "description2": "Curieux et motivé, je transforme les idées en solutions web performantes et évolutives. Expérimenté en gestion de projet et coordination d'équipe, je m'engage à livrer des produits de qualité dans les délais.",
+    "skillsTitle": "Compétences & Technologies",
+    "coreValues": {
+      "adaptability": {
+        "title": "Adaptabilité",
+        "description": "Approche flexible des défis"
+      },
+      "teamSpirit": {
+        "title": "Esprit d'équipe",
+        "description": "Solides compétences en collaboration"
+      },
+      "autonomy": {
+        "title": "Autonomie",
+        "description": "Autonome et responsable"
+      },
+      "rigor": {
+        "title": "Rigueur",
+        "description": "Axé sur les meilleures pratiques"
+      }
+    }
+  },
+  "education": {
+    "title": "Formation",
+    "degrees": {
+      "master": {
+        "title": "Master en Informatique",
+        "school": "École Nationale d'Informatique (ENI)",
+        "location": "Fianarantsoa, Madagascar",
+        "period": "2024 - 2025",
+        "details": "Parcours Informatique Générale - Deuxième année",
+        "badge": "Diplômé avec mention"
+      },
+      "bachelor": {
+        "title": "Licence en Informatique",
+        "school": "École Nationale d'Informatique (ENI)",
+        "location": "Fianarantsoa, Madagascar",
+        "period": "2020 - 2023",
+        "badge": "Diplômé avec mention"
+      },
+      "baccalaureate": {
+        "title": "Baccalauréat, Série C — avec mention Bien",
+        "school": "Lycée Saint François Xavier (CSFX)",
+        "location": "Fianarantsoa, Madagascar",
+        "period": "2019",
+        "badge": "Mention Bien"
+      }
+    }
+  },
+  "projects": {
+    "title": "Mes Réalisations",
+    "viewDemo": "Démo en direct",
+    "viewCode": "GitHub",
+    "items": {
+      "saas": {
+        "title": "Application SaaS",
+        "description": "Une plateforme SaaS éducative Next.js avec authentification Clerk et assistant vocal IA pour l'apprentissage interactif et la création de cours."
+      },
+      "portfolio": {
+        "title": "Site Portfolio",
+        "description": "Un site portfolio interactif avec animations et design responsive pour présenter mon travail."
+      },
+      "taskManager": {
+        "title": "Application de Gestion de Tâches",
+        "description": "Une application de gestion de tâches avec glisser-déposer et collaboration en temps réel pour faciliter le travail d'équipe des employés du ministère."
+      },
+      "seam": {
+        "title": "Refonte de la Plateforme SE&AM",
+        "description": "Une refonte ReactJS de la plateforme nationale de suivi de l'eau et de l'hygiène de Madagascar avec UX améliorée et interface responsive."
+      },
+      "madaSocial": {
+        "title": "Réseau Social Mada",
+        "description": "Une plateforme de dons Next.js pour la conservation de l'écosystème malgache avec architecture monolithique fullstack et interface responsive."
+      },
+      "employeeManagement": {
+        "title": "Système de Gestion des Employés",
+        "description": "Une application mobile créée avec React Native et Expo pour faciliter la planification et la gestion des employés."
+      }
+    }
+  },
+  "contact": {
+    "title": "Contactez-moi",
+    "description": "Collaborons ensemble ! Je suis toujours ouvert à discuter de projets passionnants et de nouvelles opportunités.",
+    "downloadCV": "Télécharger mon CV",
+    "form": {
+      "name": "Votre Nom",
+      "email": "Votre Email",
+      "message": "Votre Message",
+      "send": "Envoyer le message",
+      "sending": "Envoi en cours...",
+      "success": "✅ Message envoyé avec succès !",
+      "error": "❌ Échec de l'envoi du message. Veuillez réessayer."
+    },
+    "location": "Madagascar, Fianarantsoa"
+  }
+}

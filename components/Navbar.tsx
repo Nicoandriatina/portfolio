@@ -2,15 +2,18 @@
 
 import { useState, useEffect } from 'react'
 import Link from 'next/link'
+import { useTranslations } from 'next-intl'
+import LanguageSwitcher from './LanguageSwitcher'
 import styles from './Navbar.module.css'
 
 export default function Navbar() {
   const [isMenuOpen, setIsMenuOpen] = useState(false)
   const [activeSection, setActiveSection] = useState('home')
+  const t = useTranslations('nav')
 
   useEffect(() => {
     const handleScroll = () => {
-      const sections = ['home', 'about', 'education' ,'projects', 'contact']
+      const sections = ['home', 'about', 'education', 'projects', 'contact']
       const scrollPosition = window.scrollY + 150
 
       for (const section of sections) {
@@ -49,7 +52,7 @@ export default function Navbar() {
               className={`${styles.navLink} ${activeSection === 'home' ? styles.active : ''}`}
               onClick={handleLinkClick}
             >
-              Home
+              {t('home')}
             </Link>
           </li>
           <li>
@@ -58,7 +61,7 @@ export default function Navbar() {
               className={`${styles.navLink} ${activeSection === 'about' ? styles.active : ''}`}
               onClick={handleLinkClick}
             >
-              About
+              {t('about')}
             </Link>
           </li>
           <li>
@@ -67,7 +70,7 @@ export default function Navbar() {
               className={`${styles.navLink} ${activeSection === 'education' ? styles.active : ''}`}
               onClick={handleLinkClick}
             >
-              Education
+              {t('education')}
             </Link>
           </li>
           <li>
@@ -76,7 +79,7 @@ export default function Navbar() {
               className={`${styles.navLink} ${activeSection === 'projects' ? styles.active : ''}`}
               onClick={handleLinkClick}
             >
-              Projects
+              {t('projects')}
             </Link>
           </li>
           <li>
@@ -85,7 +88,7 @@ export default function Navbar() {
               className={`${styles.navLink} ${activeSection === 'contact' ? styles.active : ''}`}
               onClick={handleLinkClick}
             >
-              Contact
+              {t('contact')}
             </Link>
           </li>
         </ul>
@@ -106,6 +109,9 @@ export default function Navbar() {
               <path d="M22 12a10 10 0 1 0-11.5 9.9v-7h-2v-2.9h2V9.5c0-2 1.2-3.2 3-3.2.9 0 1.8.1 1.8.1v2h-1c-1 0-1.3.6-1.3 1.2v1.5h2.3L15 14.9h-2v7A10 10 0 0 0 22 12"/>
             </svg>
           </a>
+
+          {/* Language Switcher - Visible sur desktop */}
+          <LanguageSwitcher />
         </div>
         
         <div 
