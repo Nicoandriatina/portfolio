@@ -32,8 +32,7 @@ export default function Projects() {
 
     return () => observer.disconnect()
   }, [])
-
-  const projects = [
+    const projects = [
     {
       title: t('items.saas.title'),
       description: t('items.saas.description'),
@@ -83,7 +82,6 @@ export default function Projects() {
       github: '#'
     }
   ]
-
   return (
     <section id="projects" className="section" ref={projectsRef}>
       <div className="container">

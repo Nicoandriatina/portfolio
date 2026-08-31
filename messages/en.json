@@ -17,7 +17,7 @@
       "innovator": "Innovator"
     },
     "quote": "Passionate about crafting quality web experiences and continuous learning",
-    "downloadCV": "Get my resume"
+    "downloadCV": "Download my CV"
   },
   "about": {
     "title": "About Me",
@@ -104,7 +104,7 @@
   "contact": {
     "title": "Get In Touch",
     "description": "Let's collaborate! I am always open to discussing exciting projects and new opportunities.",
-    "downloadCV": "Get my resume",
+    "downloadCV": "Download my CV",
     "form": {
       "name": "Your Name",
       "email": "Your Email",
@@ -112,7 +112,23 @@
       "send": "Send Message",
       "sending": "Sending...",
       "success": "✅ Message sent successfully!",
-      "error": "❌ Failed to send message. Please try again."
+      "error": "❌ Failed to send message. Please try again.",
+      "errors": {
+        "nameRequired": "Name is required",
+        "nameInvalid": "Name must contain at least 2 characters",
+        "emailRequired": "Email is required",
+        "emailInvalid": "Invalid email address",
+        "messageRequired": "Message is required",
+        "messageInvalid": "Message must contain at least 10 characters"
+      },
+      "modal": {
+        "successTitle": "Message sent!",
+        "success": "Thank you for your message! 🎉\n\nI received it and will respond as soon as possible.\n\nYou will also receive a confirmation email.",
+        "errorTitle": "Oops, an error occurred",
+        "error400": "An error occurred. Please try again in a few moments.",
+        "error401": "Connection problem. Please check your internet connection.",
+        "close": "Close"
+      }
     },
     "location": "Madagascar, Fianarantsoa"
   }

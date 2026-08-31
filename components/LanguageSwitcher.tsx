@@ -40,13 +40,13 @@ export default function LanguageSwitcher() {
             onClick={() => switchLanguage('en')}
             className={locale === 'en' ? styles.active : ''}
           >
-          EN English
+            🇬🇧 English
           </button>
           <button 
             onClick={() => switchLanguage('fr')}
             className={locale === 'fr' ? styles.active : ''}
           >
-            FR Français
+            🇫🇷 Français
           </button>
         </div>
       )}

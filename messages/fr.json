@@ -62,7 +62,7 @@
         "badge": "Diplômé avec mention"
       },
       "baccalaureate": {
-        "title": "Baccalauréat, Série C — avec mention Bien",
+        "title": "Baccalauréat, Série C — avec mention Assez Bien",
         "school": "Lycée Saint François Xavier (CSFX)",
         "location": "Fianarantsoa, Madagascar",
         "period": "2019",
@@ -104,7 +104,7 @@
   "contact": {
     "title": "Contactez-moi",
     "description": "Collaborons ensemble ! Je suis toujours ouvert à discuter de projets passionnants et de nouvelles opportunités.",
-    "downloadCV": "Télécharger mon CV",
+    "downloadCV": "Télécharger my CV",
     "form": {
       "name": "Votre Nom",
       "email": "Votre Email",
@@ -112,7 +112,23 @@
       "send": "Envoyer le message",
       "sending": "Envoi en cours...",
       "success": "✅ Message envoyé avec succès !",
-      "error": "❌ Échec de l'envoi du message. Veuillez réessayer."
+      "error": "❌ Échec de l'envoi du message. Veuillez réessayer.",
+      "errors": {
+        "nameRequired": "Le nom est requis",
+        "nameInvalid": "Le nom doit contenir au moins 2 caractères",
+        "emailRequired": "L'email est requis",
+        "emailInvalid": "Adresse email invalide",
+        "messageRequired": "Le message est requis",
+        "messageInvalid": "Le message doit contenir au moins 10 caractères"
+      },
+      "modal": {
+        "successTitle": "Message envoyé !",
+        "success": "Merci pour votre message ! 🎉\n\nJe l'ai bien reçu et vous répondrai dans les plus brefs délais.\n\nVous recevrez également un email de confirmation.",
+        "errorTitle": "Oups, une erreur est survenue",
+        "error400": "Une erreur s'est produite. Veuillez réessayer dans quelques instants.",
+        "error401": "Problème de connexion. Veuillez vérifier votre connexion internet.",
+        "close": "Fermer"
+      }
     },
     "location": "Madagascar, Fianarantsoa"
   }

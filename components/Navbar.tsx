@@ -91,8 +91,14 @@ export default function Navbar() {
               {t('contact')}
             </Link>
           </li>
+
+          {/* Language Switcher MOBILE - Directement dans le menu */}
+          <li className={styles.mobileLangSwitcher}>
+            <LanguageSwitcher />
+          </li>
         </ul>
         
+        {/* RÉSEAUX SOCIAUX - Séparés du Language Switcher */}
         <div className={styles.navSocial}>
           <a href="https://github.com/Nicoandriatina" aria-label="GitHub" target="_blank" rel="noopener noreferrer" className={styles.socialIcon}>
             <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
@@ -113,10 +119,18 @@ export default function Navbar() {
           {/* Language Switcher - Visible sur desktop */}
           <LanguageSwitcher />
         </div>
+
+        {/* Language Switcher DESKTOP - En dehors de navSocial */}
+        <div className={styles.desktopLangSwitcher}>
+          <LanguageSwitcher />
+        </div>
         
         <div 
           className={`${styles.hamburger} ${isMenuOpen ? styles.active : ''}`}
           onClick={() => setIsMenuOpen(!isMenuOpen)}
+          aria-label="Toggle menu"
+          role="button"
+          tabIndex={0}
         >
           <span></span>
           <span></span>
