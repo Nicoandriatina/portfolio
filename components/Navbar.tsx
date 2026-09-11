@@ -94,7 +94,7 @@ export default function Navbar() {
 
           {/* Language Switcher MOBILE - Directement dans le menu */}
           <li className={styles.mobileLangSwitcher}>
-            <LanguageSwitcher />
+            {/* <LanguageSwitcher /> */}
           </li>
         </ul>
         
@@ -117,7 +117,7 @@ export default function Navbar() {
           </a>
 
           {/* Language Switcher - Visible sur desktop */}
-          <LanguageSwitcher />
+          {/* <LanguageSwitcher /> */}
         </div>
 
         {/* Language Switcher DESKTOP - En dehors de navSocial */}
